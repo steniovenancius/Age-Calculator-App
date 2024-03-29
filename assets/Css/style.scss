@@ -1,0 +1,137 @@
+@import "variables";
+@import "responsive";
+
+//functions
+@mixin position($property) {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    #{$property}: 100%;
+    transform: translate(0, -50%);
+    background-color: $neutralColor-lightGrey;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: $neutralColor-offBlack;
+}
+
+body {
+    background-color: $neutralColor-offWhite;
+}
+
+main {
+    margin: 4rem 1rem 0 1rem;
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px 20px 40px 20px;
+    background-color: $neutralColor-white;
+    
+    #form {
+        width: 100%;
+        form {
+            display: grid;
+            grid-template: 
+                "labelDD labelMM labelYYYY" 1.1rem
+                "inputDD inputMM inputYYYY" 50px
+                / 90px 90px 90px;
+            justify-content: space-between;
+
+            label {
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: $neutralColor-smokeyGray;
+            }
+
+            label:nth-child(1) {
+                grid-area: labelDD;
+            }
+            label:nth-child(3){
+                grid-area: labelMM;
+            }
+            label:nth-child(5){
+                grid-area: labelYYYY;
+            }
+
+            input {
+                outline: none;
+                border: 1px solid $neutralColor-lightGrey;
+                border-radius: 8px;
+                font-size: 20px;
+                padding-left: .5rem;
+                transition: ease-in 200ms;
+                cursor: pointer;
+
+                &:active, &:focus{
+                    border-color: $primaryColor-purple;
+                }
+            }
+            input:nth-child(2) {
+                grid-area: inputDD;
+            }
+            input:nth-child(4) {
+                grid-area: inputMM;
+            }
+            input:nth-child(6) {
+                grid-area: inputYYYY;
+            }
+        }
+
+        button {
+            border: none;
+            border-radius: 100%;
+            width: 60px;
+            height: 60px;
+            background-color: $primaryColor-purple;
+            position: relative;
+            left: 50%;
+            bottom: 10%;
+            transform: translate(-50%,50%);
+            transition: ease-in 200ms;
+
+            &::after {
+                @include position(left)
+            }
+
+            &::before {
+                @include position(right)
+            }
+
+            &:active,&:hover {
+                cursor: pointer;
+                background-color: $neutralColor-offBlack;
+            }
+
+            img {
+                width: 30px;
+            }
+        }
+        
+    }
+
+    #result {
+        width: 100%;
+        margin-top: 4rem;
+        
+        h2 {
+            font-size: 50px;
+            font-weight: 800;
+            font-style: italic;
+
+            span {
+                color: $primaryColor-purple;
+            }
+        }
+    }
+}

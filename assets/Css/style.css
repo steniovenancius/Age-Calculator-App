@@ -1,0 +1,126 @@
+@media screen and (min-width: 1441px) {
+  main {
+    margin: 50px auto;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: hsl(0, 0%, 8%);
+}
+
+body {
+  background-color: hsl(0, 0%, 94%);
+}
+
+main {
+  margin: 4rem 1rem 0 1rem;
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px 20px 40px 20px;
+  background-color: hsl(0, 0%, 100%);
+}
+main #form {
+  width: 100%;
+}
+main #form form {
+  display: grid;
+  grid-template: "labelDD labelMM labelYYYY" 1.1rem "inputDD inputMM inputYYYY" 50px/90px 90px 90px;
+  justify-content: space-between;
+}
+main #form form label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: hsl(0, 1%, 44%);
+}
+main #form form label:nth-child(1) {
+  grid-area: labelDD;
+}
+main #form form label:nth-child(3) {
+  grid-area: labelMM;
+}
+main #form form label:nth-child(5) {
+  grid-area: labelYYYY;
+}
+main #form form input {
+  outline: none;
+  border: 1px solid hsl(0, 0%, 86%);
+  border-radius: 8px;
+  font-size: 20px;
+  padding-left: 0.5rem;
+  transition: ease-in 200ms;
+  cursor: pointer;
+}
+main #form form input:active, main #form form input:focus {
+  border-color: hsl(259, 100%, 65%);
+}
+main #form form input:nth-child(2) {
+  grid-area: inputDD;
+}
+main #form form input:nth-child(4) {
+  grid-area: inputMM;
+}
+main #form form input:nth-child(6) {
+  grid-area: inputYYYY;
+}
+main #form button {
+  border: none;
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+  background-color: hsl(259, 100%, 65%);
+  position: relative;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%, 50%);
+  transition: ease-in 200ms;
+}
+main #form button::after {
+  content: "";
+  display: block;
+  width: 110px;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(0, -50%);
+  background-color: hsl(0, 0%, 86%);
+}
+main #form button::before {
+  content: "";
+  display: block;
+  width: 110px;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translate(0, -50%);
+  background-color: hsl(0, 0%, 86%);
+}
+main #form button:active, main #form button:hover {
+  cursor: pointer;
+  background-color: hsl(0, 0%, 8%);
+}
+main #form button img {
+  width: 30px;
+}
+main #result {
+  width: 100%;
+  margin-top: 4rem;
+}
+main #result h2 {
+  font-size: 50px;
+  font-weight: 800;
+  font-style: italic;
+}
+main #result h2 span {
+  color: hsl(259, 100%, 65%);
+}/*# sourceMappingURL=style.css.map */
